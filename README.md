@@ -68,7 +68,7 @@ This project builds a complete end-to-end Artificial Intelligence and machine le
 | Gender | Categorical | Male / Female | Low |
 | Study Hours Per Day | Numerical | 0 – 12 hours | Very High |
 | Social Media Hours Per Day | Numerical | 0 – 8 hours | High (negative) |
-| Attendance Percentage | Numerical | 40% – 100% | High |
+| Attendance Percentage | Numerical | 00% – 100% | High |
 | Sleep Hours Per Day | Numerical | 4 – 10 hours | Medium |
 | Parent Education Level | Categorical | None / High School / Bachelor / Master / PhD | Medium |
 | Extra-Curricular Activities | Categorical | None / Sports / Arts / Clubs / Multiple | Low |
