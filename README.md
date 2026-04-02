@@ -21,7 +21,7 @@ A machine learning web application that predicts student exam scores based on st
 
 ## 🔍 Project Overview
 
-This project builds a complete end-to-end machine learning system to predict student academic performance (exam scores out of 100). The system:
+This project builds a complete end-to-end ArtificialIntelligence and machine learning system to predict student academic performance (exam scores out of 100). The system:
 
 - **Generates** a realistic synthetic dataset of 2,000 student records
 - **Trains** a Gradient Boosting Regressor model with ~91% accuracy (R²)
