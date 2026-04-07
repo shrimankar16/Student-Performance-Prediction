@@ -18,10 +18,10 @@ np.random.seed(42)
 N = 2000
 
 def generate_dataset():
-    gender = np.random.choice(['Male', 'Female'], N)
+    gender = np.random.choice(['Male', 'Female', 'Other'], N)
     study_hours = np.round(np.random.uniform(0, 12, N), 1)
     social_media_hours = np.round(np.random.uniform(0, 8, N), 1)
-    attendance_pct = np.round(np.random.uniform(40, 100, N), 1)
+    attendance_pct = np.round(np.random.uniform(0, 100, N), 1)
     sleep_hours = np.round(np.random.uniform(4, 10, N), 1)
     parent_education = np.random.choice(['None', 'High School', 'Bachelor', 'Master', 'PhD'], N,
                                          p=[0.05, 0.35, 0.35, 0.18, 0.07])
@@ -30,7 +30,8 @@ def generate_dataset():
     part_time_job = np.random.choice(['Yes', 'No'], N, p=[0.3, 0.7])
 
     # Encode for score calculation
-    gender_num = (gender == 'Female').astype(float) * 2
+    gender_map = {'Male': 0, 'Female': 2, 'Other': 1}
+    gender_num = np.array([gender_map[g] for g in gender], dtype=float)
     parent_edu_map = {'None': 0, 'High School': 2, 'Bachelor': 5, 'Master': 8, 'PhD': 10}
     parent_num = np.array([parent_edu_map[p] for p in parent_education])
     extra_map = {'None': 0, 'Sports': 3, 'Arts': 2, 'Clubs': 3, 'Multiple': 5}

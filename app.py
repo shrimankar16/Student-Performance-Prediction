@@ -151,12 +151,11 @@ with st.sidebar:
     st.markdown("## 🎓 Student Info")
     st.markdown("---")
 
-    gender      = st.selectbox("👤 Gender",           ["Male", "Female"])
+    gender      = st.selectbox("👤 Gender",           ["Male", "Female", "Other"])
     study_hours = st.slider("📖 Study Hours / Day",   0.0, 12.0, 5.0, 0.5)
     social_med  = st.slider("📱 Social Media Hrs/Day", 0.0, 8.0,  2.0, 0.5)
-    attendance  = st.slider("🏫 Attendance %",         40.0, 100.0, 80.0, 1.0)
+    attendance  = st.slider("🏫 Attendance %",         00.0, 100.0, 50.0, 1.0)
     sleep_hrs   = st.slider("😴 Sleep Hours / Day",   4.0, 10.0, 7.0, 0.5)
-
     st.markdown("---")
     st.markdown("#### 📋 Background")
     parent_edu  = st.selectbox("🎓 Parent Education",   ["None", "High School", "Bachelor", "Master", "PhD"])
@@ -316,7 +315,7 @@ with tab2:
         st.markdown("**Score by Gender**")
         fig, ax = plt.subplots(figsize=(5.5, 3.5))
         fig.patch.set_facecolor('#0f0f1a'); ax.set_facecolor('#1a1a2e')
-        colors_g = ['#6464ff', '#ff64aa']
+        colors_g = ['#6464ff', '#ff64aa', '#64ffda']
         for i, (g, grp) in enumerate(df.groupby('gender')):
             ax.hist(grp.score, bins=20, alpha=0.7, color=colors_g[i], label=g, edgecolor='#1a1a2e')
         ax.set_xlabel("Score", color='#aaaacc'); ax.set_ylabel("Count", color='#aaaacc')
